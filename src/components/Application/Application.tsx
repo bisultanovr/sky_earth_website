@@ -67,7 +67,35 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 			});
 		}, [btnText]);
 
-		const handleFormBtn = (): void => {
+		const handleFormBtn = async (e: React.FormEvent) => {
+			e.preventDefault();
+			const { fio, mail, num, org } = userData;
+		
+			if ([fio, mail, num, org].some(field => field.trim() === '')) return;
+		
+			try {
+				await fetch("https://docs.google.com/forms/d/e/1FAIpQLScb89d773ZJYqZCQ_O09E5LVhL9p_2fi_xRyJPTc4WrNYOWRA/formResponse", {
+				method: "POST",
+				mode: "no-cors",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				body: new URLSearchParams({
+					"entry.755999436": fio,
+					"entry.1839799665": mail,
+					"entry.1488955589": num,
+					"entry.731529027": org
+				}).toString()
+			});
+		
+			setBtnText("ВАША ЗАЯВКА ОТПРАВЛЕНА");
+			} catch (err) {
+				console.error("Ошибка при отправке", err);
+			}
+		};
+
+
+		/*const handleFormBtn = (): void => {
 			const { fio, mail, num, org } = userData;
 			if ([fio, mail, num, org].every(field => field.trim() !== '')) {
 				setBtnText('ВАША ЗАЯВКА ОТПРАВЛЕНА');
@@ -89,7 +117,7 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 				}
 				formBtn.style.cursor = 'default';
 			}
-		};
+		};*/
 
 		return (
 			<div className={'application-wrapper'}>
