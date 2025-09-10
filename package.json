@@ -2,6 +2,7 @@
 	"name": "vvid-project",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://bisultanovr.github.io/sky_earth_website",
 	"scripts": {
 		"start": "webpack serve --env mode=development",
 		"build:dev": "webpack --env mode=development",
@@ -10,7 +11,10 @@
 		"build:desktop": "webpack --env mode=production --env platform=desktop",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"buildcss": "postcss in.css -0 out.css"
+		"buildcss": "postcss in.css -0 out.css",
+		"build": "npm run build:prod",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -48,6 +52,7 @@
 		"cssnano": "^7.0.5",
 		"file-loader": "^6.2.0",
 		"fork-ts-checker-webpack-plugin": "^4.1.6",
+		"gh-pages": "^6.3.0",
 		"html-webpack-plugin": "^5.6.0",
 		"mini-css-extract-plugin": "^2.9.1",
 		"postcss": "^8.4.41",
