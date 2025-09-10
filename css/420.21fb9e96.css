@@ -1,0 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap);
+.game{padding-top:80px}.game,.game .game-inner{background-position:50%;background-repeat:no-repeat;background-size:cover}.game .game-inner{align-items:center;display:flex;flex-direction:column;gap:16px 0;justify-content:center;padding:30px 20px 50px;width:500px}.game .game-inner .game-descr{color:#c5c6c7;color:#dadada;font-family:Manrope,sans-serif;font-size:24px;font-weight:400;margin-bottom:16px}.game .game-inner .game-btn{border:3px solid #66fcf1;color:#dadada;font-family:Manrope,sans-serif;font-size:40px;font-weight:800;padding:10px 50px;text-transform:uppercase;transition:all .2s ease-out;width:-webkit-max-content;width:max-content}.game .game-inner .game-btn:hover{background-color:#66fcf1;color:#000}
+
+/*# sourceMappingURL=420.21fb9e96.css.map*/
