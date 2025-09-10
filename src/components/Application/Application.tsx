@@ -57,40 +57,48 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 			org: '',
 		});
 		const [btnText, setBtnText] = useState<string>('ОТПРАВИТЬ');
+		const [submitted, setSubmitted] = useState<boolean>(false);
+		const [submitting, setSubmitting] = useState<boolean>(false);
 
 		useEffect(() => {
-			setUserData({
-				fio: '',
-				mail: '',
-				num: '',
-				org: '',
-			});
-		}, [btnText]);
+			if (submitted) {
+				// очищаем форму только один раз, после отправки
+				setUserData({ fio: '', mail: '', num: '', org: '' });
+			}
+		}, [submitted]);
 
 		const handleFormBtn = async (e: React.FormEvent) => {
 			e.preventDefault();
+			if (submitted || submitting) return; // запрет повторной отправки
+
 			const { fio, mail, num, org } = userData;
 		
 			if ([fio, mail, num, org].some(field => field.trim() === '')) return;
-		
+			
+			setSubmitting(true);
+
 			try {
 				await fetch("https://docs.google.com/forms/d/e/1FAIpQLScb89d773ZJYqZCQ_O09E5LVhL9p_2fi_xRyJPTc4WrNYOWRA/formResponse", {
-				method: "POST",
-				mode: "no-cors",
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded"
-				},
-				body: new URLSearchParams({
-					"entry.755999436": fio,
-					"entry.1839799665": mail,
-					"entry.1488955589": num,
-					"entry.731529027": org
-				}).toString()
-			});
+					method: "POST",
+					mode: "no-cors",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					body: new URLSearchParams({
+						"entry.755999436": fio,
+						"entry.1839799665": mail,
+						"entry.1488955589": num,
+						"entry.731529027": org
+					}).toString()
+				});
 		
-			setBtnText("ВАША ЗАЯВКА ОТПРАВЛЕНА");
+				setBtnText("ВАША ЗАЯВКА ОТПРАВЛЕНА");
+				setSubmitted(true); // блокируем повторную отправку
 			} catch (err) {
 				console.error("Ошибка при отправке", err);
+				setBtnText('ОШИБКА ПРИ ОТПРАВКЕ');
+			} finally {
+				setSubmitting(false);
 			}
 		};
 
