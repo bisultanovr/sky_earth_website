@@ -43,11 +43,11 @@ export const Header: FC<Header> = ({ sectionIds, scrollToSection }) => {
 				</div>
 				<nav className={'menu'}>
 					<ul className={'menu-list'}>
-						<li className={'menu-item'} key={'Игра'}>
+						{/*<li className={'menu-item'} key={'Игра'}>
 							<NavLink className={'menu-link'} to={'/game'}>
 								ПОПРОБОВАТЬ
 							</NavLink>
-						</li>
+						</li>*/}
 						{menu.map((item, idx) => {
 							const sectionId = sectionIds[idx + 1];
 							return (

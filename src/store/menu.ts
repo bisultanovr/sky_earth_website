@@ -6,8 +6,8 @@ interface Menu {
 export const menu: Menu[] = [
 	{ text: 'О СИМУЛЯТОРЕ' },
 	{ text: 'ТРЕЙЛЕР' },
-	{ text: 'ИГРОВЫЕ РЕЖИМЫ' },
+	{ text: 'РЕЖИМЫ' },
 	{ text: 'ЛОКАЦИИ' },
 	{ text: 'БПЛА' },
-	{ text: 'РУЖЬЯ' },
+	{ text: 'РЭБ' },
 ];

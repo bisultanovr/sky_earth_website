@@ -25,12 +25,6 @@ export const Trailer = forwardRef<HTMLElement, Slider>((_, ref) => {
 			<div className={'container'}>
 				<div className={'trailer-inner'}>
 					<h2 className={'trailer-title'}>ТРЕЙЛЕР</h2>
-					<p className={'trailer-descr'}>
-						В видеороликах демонстрируется подавление
-						<br />
-						разведывательного БпЛА
-						<span className={'highlight'}> DJI Mavic 2 pro</span>
-					</p>
 					<Slider slides={trailerSlides} />
 				</div>
 			</div>

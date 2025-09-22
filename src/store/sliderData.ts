@@ -52,13 +52,4 @@ export const trailerSlides: Slide[] = [
 	{
 		img: gif4,
 	},
-	{
-		img: gif5,
-	},
-	{
-		img: gif6,
-	},
-	{
-		img: gif7,
-	},
 ];

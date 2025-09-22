@@ -135,12 +135,11 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 							<div className={'application-container'}>
 								<div className={'application-descr'}>
 									<h2 className={'application-title'}>
-										ЗАЯВКА НА ПРИОБРЕТЕНИЕ ЛИЦЕНЗИИ
+										ОБРАТНАЯ СВЯЗЬ
 									</h2>
 									<p className={'application-text'}>
-										Заполните небольшую форму, мы свяжемся с вами по указанным
-										контактным данным и обсудим лучшие варианты приобретения
-										симулятора «НЕБО-ЗЕМЛЯ»
+										Покажите свою заинтересованность, заполнив небольшую форму.
+										Мы будем держать вас в курсе развития проекта по указанным контактным данным.
 									</p>
 								</div>
 								<img className={'application-img'} src={dron3} alt={'Дрон'} />
@@ -173,7 +172,7 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 								>
 									{btnText}
 								</button>
-								<p className={'application-form-group application-form-policy'}>
+								{/*<p className={'application-form-group application-form-policy'}>
 									Отправляя заявку вы соглашаетесь с
 									<NavLink
 										to={'/'}
@@ -182,7 +181,7 @@ export const Application = forwardRef<HTMLElement, ApplicationProps>(
 									>
 										политикой конфиденциальности
 									</NavLink>
-								</p>
+								</p>*/}
 							</form>
 						</div>
 					</div>

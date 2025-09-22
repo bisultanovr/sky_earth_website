@@ -8,7 +8,7 @@ const wrapper = document.querySelector('.wrapper') as Element;
 const root = ReactDOM.createRoot(wrapper);
 
 root.render(
-	<BrowserRouter basename="/sky_earth_website">
+	<BrowserRouter>
 		<App />
 	</BrowserRouter>
 );
