@@ -25,8 +25,8 @@ export const Header: FC<Header> = ({ sectionIds, scrollToSection }) => {
 	const isManePage = location.pathname === '/';
 
 	const contacts: Contacts[] = [
-		{ href: 'mailto:', src: mail, alt: 'Mail' },
-		{ href: '!#', src: tg, alt: 'Telegram' },
+		{ href: 'mailto:solarineofficial@gmail.com', src: mail, alt: 'Mail' },
+		{ href: 'https://t.me/solarineSE', src: tg, alt: 'Telegram' },
 	];
 
 	return (
@@ -74,7 +74,7 @@ export const Header: FC<Header> = ({ sectionIds, scrollToSection }) => {
 						{contacts.map(contact => (
 							<a
 								className={'social-link'}
-								href={'mailto:'}
+								href={contact.href}
 								title={contact.alt}
 								target={'_blank'}
 								rel={'noopener noreferrer'}
